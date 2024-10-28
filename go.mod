@@ -1,4 +1,4 @@
-module github.com/lafriks-fork/goas
+module github.com/forMuziek/goas
 
 go 1.22
 

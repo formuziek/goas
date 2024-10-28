@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/lafriks-fork/goas"
+	"github.com/forMuziek/goas"
 
 	"github.com/spf13/cobra"
 )
