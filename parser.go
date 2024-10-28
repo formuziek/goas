@@ -1115,7 +1115,11 @@ func (p *parser) parseSchemaObject(name, pkgPath, pkgName, typeName string) (*Sc
 	var err error
 
 	// handler basic and some specific typeName
-	if strings.HasPrefix(typeName, "[]") {
+	if typeName == "[]byte" {
+		schemaObject.Type = "string"
+		schemaObject.Format = "byte"
+		return &schemaObject, nil
+	} else if strings.HasPrefix(typeName, "[]") {
 		schemaObject.Type = "array"
 		itemTypeName := typeName[2:]
 		schema, ok := p.KnownIDSchema[genSchemeaObjectID(name, pkgName, itemTypeName)]
