@@ -1429,6 +1429,10 @@ astFieldsLoop:
 				}
 			}
 
+			if nullable := astFieldTag.Get("nullable"); nullable == "true" {
+				fieldSchema.Nullable = true
+			}
+
 			if validate := astFieldTag.Get("validate"); validate != "" {
 				validations := strings.Split(validate, ",")
 				var hasDive bool
